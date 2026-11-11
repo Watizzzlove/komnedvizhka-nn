@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Next.js build outputs
+.next/
+out/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Local binaries & design extraction tools
+tools/
+generate_svgs.py
+
+# Misc
+*.tsbuildinfo
+.env*.local
+.DS_Store
+Thumbs.db

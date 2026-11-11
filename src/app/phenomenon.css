@@ -1,0 +1,493 @@
+/* ==========================================================================
+   PHENOMENON STUDIO AUTHENTIC DESIGN SYSTEM & EXACT MECHANICS
+   ========================================================================== */
+
+/* 1. EXACT TYPOGRAPHY & SCALE (1440px vw scale adapted cleanly to Kharkiv Tone width) */
+.title--xxl {
+  font-family: 'Kharkiv Tone', 'Bricolage Grotesque', Arial, sans-serif;
+  font-size: clamp(30px, 4.35vw, 68px);
+  font-weight: 450;
+  line-height: 112%;
+  letter-spacing: 0.005em;
+  font-synthesis-weight: none;
+}
+
+.title--xl {
+  font-family: 'Kharkiv Tone', 'Bricolage Grotesque', Arial, sans-serif;
+  font-size: clamp(26px, 3.65vw, 56px);
+  font-weight: 450;
+  line-height: 115%;
+  letter-spacing: 0.005em;
+  font-synthesis-weight: none;
+}
+
+.title--l {
+  font-family: 'Kharkiv Tone', 'Bricolage Grotesque', Arial, sans-serif;
+  font-size: clamp(22px, 2.75vw, 42px);
+  font-weight: 440;
+  line-height: 112%;
+  letter-spacing: 0.005em;
+  font-synthesis-weight: none;
+}
+
+.title--m {
+  font-family: 'Kharkiv Tone', 'Bricolage Grotesque', Arial, sans-serif;
+  font-size: clamp(20px, 2vw, 32px);
+  font-weight: 500;
+  line-height: 120%;
+  font-synthesis-weight: none;
+}
+
+.txt--lead {
+  font-family: 'Albert Sans', Arial, sans-serif;
+  font-size: clamp(18px, 1.9vw, 30px);
+  font-weight: 400;
+  line-height: 135%;
+  letter-spacing: -0.02em;
+  color: #C0C8CF;
+}
+
+.txt--caption-m {
+  font-family: 'Kharkiv Tone', 'Bricolage Grotesque', Arial, sans-serif !important;
+  font-size: clamp(11px, 0.9722222222vw, 14px);
+  font-weight: 600;
+  line-height: 115%;
+  letter-spacing: clamp(1.5px, 0.1458333333vw, 2.1px);
+  text-transform: uppercase;
+  font-synthesis-weight: none;
+}
+
+.txt--caption-s {
+  font-family: 'Kharkiv Tone', 'Bricolage Grotesque', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-synthesis-weight: none;
+}
+
+/* 2. FULL-BLEED FLUID CONTAINER (.container from Phenomenon) */
+.ph-container {
+  width: 100%;
+  max-width: 100vw;
+  padding-left: clamp(16px, 2.2222222222vw, 40px);
+  padding-right: clamp(16px, 2.2222222222vw, 40px);
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* 3. AUTHENTIC PHENOMENON BUTTONS (.btn + circle fill + dual arrow slide) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5555555556vw;
+  text-align: left;
+  border-radius: 0.5555555556vw;
+  padding: 0 1.9444444444vw;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-feature-settings: "lnum", "pnum";
+  font-family: 'Kharkiv Tone', 'Bricolage Grotesque', Arial, sans-serif;
+  font-size: 0.875vw;
+  font-weight: 600;
+  font-synthesis-weight: none;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  outline: 0;
+  border: none;
+  transition: 0.3s;
+  height: 4.1666666667vw;
+  min-height: 48px;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+@media (max-width: 1180px) {
+  .btn {
+    gap: 8px;
+    border-radius: 8px;
+    padding: 0 28px;
+    font-size: 14px;
+    letter-spacing: 2.1px;
+    height: 54px;
+  }
+}
+
+.btn--lg-desk {
+  height: 5vw;
+  padding-left: 2.6388888889vw;
+  padding-right: 2.6388888889vw;
+}
+
+.btn--lg-desk.btn.arr {
+  padding-right: 2.0833333333vw;
+}
+
+@media (max-width: 1180px) {
+  .btn--lg-desk {
+    height: 68px;
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+  .btn--lg-desk.btn.arr {
+    padding-right: 26px;
+  }
+}
+
+@media (max-width: 992px) {
+  .btn--lg-desk {
+    height: 58px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .btn--lg-desk.btn.arr {
+    padding-right: 20px;
+  }
+}
+
+.btn:not(.btn--simple) {
+  overflow: hidden;
+  position: relative;
+}
+
+.btn:not(.btn--simple) span {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Expanding circular backdrop from center on hover */
+.btn:not(.btn--simple) span::before {
+  content: "";
+  width: 200%;
+  padding-top: 200%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.btn:not(.btn--simple) span b {
+  position: relative;
+  z-index: 1;
+  font-weight: inherit;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  display: inline-block;
+}
+
+.btn:not(.btn--simple):hover span::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Color themes & hover fills */
+.btn--white {
+  background: #ffffff;
+  color: #080d10;
+}
+
+.btn--orange {
+  background: #ff7a00;
+  color: #ffffff;
+}
+
+.btn--dark {
+  background: #080d10;
+  color: #ffffff;
+}
+
+.btn--white-light {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  backdrop-filter: blur(8px);
+}
+
+.btn.hover--orange:hover {
+  color: #ffffff;
+}
+.btn.hover--orange span::before {
+  background: #ff7a00;
+}
+
+.btn.hover--white:hover {
+  color: #080d10;
+}
+.btn.hover--white span::before {
+  background: #ffffff;
+}
+
+.btn.hover--dark:hover {
+  color: #ffffff;
+}
+.btn.hover--dark span::before {
+  background: #080d10;
+}
+
+/* Dual sliding arrow mechanic: right arrow exits, left arrow enters */
+.btn::before,
+.btn::after {
+  transition: 0.3s;
+}
+
+.btn.arr {
+  padding-right: 1.5277777778vw;
+}
+
+@media (max-width: 1180px) {
+  .btn.arr {
+    padding-right: 22px;
+  }
+}
+
+.btn.arr::before {
+  content: "";
+  width: 1.0416666667vw;
+  height: 1.0416666667vw;
+  background: url(../assets/icons/arrow-right.svg) no-repeat center / contain;
+  position: absolute;
+  left: -2.7777777778vw;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s all;
+  z-index: 2;
+}
+
+@media (max-width: 1180px) {
+  .btn.arr::before {
+    width: 15px;
+    height: 15px;
+    left: -40px;
+  }
+}
+
+.btn.arr::after {
+  content: "";
+  width: 1.0416666667vw;
+  height: 1.0416666667vw;
+  background: url(../assets/icons/arrow-right.svg) no-repeat center / contain;
+  position: relative;
+  right: 0;
+  transition: 0.3s all;
+  z-index: 2;
+}
+
+@media (max-width: 1180px) {
+  .btn.arr::after {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .btn.arr:hover::after {
+    right: -1.5972222222vw;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .btn.arr:hover::before {
+    left: 1.5972222222vw;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .btn.arr:hover span b {
+    transform: translateX(1.5972222222vw);
+  }
+  .btn--lg-desk.btn.arr:hover::before {
+    left: 2.0833333333vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1180px) {
+  .btn.arr:hover::after {
+    right: -23px;
+  }
+  .btn.arr:hover::before {
+    left: 23px;
+  }
+  .btn.arr:hover span b {
+    transform: translateX(23px);
+  }
+  .btn--lg-desk.btn.arr:hover::before {
+    left: 26px;
+  }
+}
+
+/* Arrow color variations + hover color inversion */
+.btn--orange.arr::before,
+.btn--orange.arr::after,
+.btn--white-light.arr::before,
+.btn--white-light.arr::after,
+.btn--dark.arr::before,
+.btn--dark.arr::after {
+  background-image: url(../assets/icons/arrow-right-white.svg);
+}
+
+.btn.hover--white:hover.btn--orange.arr::before,
+.btn.hover--white:hover.btn--orange.arr::after,
+.btn.hover--white:hover.btn--white-light.arr::before,
+.btn.hover--white:hover.btn--white-light.arr::after,
+.btn.hover--orange:hover.btn--white.arr::before,
+.btn.hover--orange:hover.btn--white.arr::after,
+.btn.hover--dark:hover.btn--white.arr::before,
+.btn.hover--dark:hover.btn--white.arr::after {
+  filter: invert(1);
+}
+
+/* 4. EXACT PHENOMENON CASE CARDS (.column.radius-12.bg--gray with unfolding background) */
+.ph-case-card {
+  position: relative;
+  background-color: rgba(8, 13, 16, 0.04);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: color 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  color: #080D10;
+  border: none !important;
+  isolation: isolate;
+}
+
+.ph-case-card::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #080D10;
+  clip-path: inset(50% round 12px);
+  transform: rotate(-25deg);
+  transition: clip-path 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: clip-path, transform;
+  z-index: 0;
+  border-radius: 12px;
+}
+
+.ph-case-card:hover::before {
+  clip-path: inset(0px round 12px);
+  transform: rotate(0deg);
+}
+
+.ph-case-card:hover {
+  color: #FFFFFF;
+}
+
+.ph-case-card .main-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.33;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #E2E8F0;
+  z-index: 1;
+}
+
+.ph-case-card .main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ph-case-card:hover .main-image img {
+  transform: scale(1.04);
+}
+
+.ph-case-card .card-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* 5. STICKY MEDIA COLUMN */
+.sticky-media-col {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+/* 6. HERO CLIPPED BOTTOM MASK (Leaf backdrop prevents sticky-child GPU compositor drop) */
+.hero-clipped-bottom {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 0 0 5.5555555556vw 5.5555555556vw;
+}
+
+@media (max-width: 1180px) {
+  .hero-clipped-bottom {
+    border-radius: 0 0 80px 80px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-clipped-bottom {
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 100%,
+      calc(50% + 120px) 100%,
+      calc(50% + 105px) calc(100% - 2.9px),
+      calc(50% + 90px) calc(100% - 11.4px),
+      calc(50% + 75px) calc(100% - 24.7px),
+      calc(50% + 60px) calc(100% - 37px),
+      calc(50% + 45px) calc(100% - 49.3px),
+      calc(50% + 32px) calc(100% - 58px),
+      calc(50% + 18px) calc(100% - 69px),
+      calc(50% + 8px) calc(100% - 73.5px),
+      50% calc(100% - 74px),
+      calc(50% - 8px) calc(100% - 73.5px),
+      calc(50% - 18px) calc(100% - 69px),
+      calc(50% - 32px) calc(100% - 58px),
+      calc(50% - 45px) calc(100% - 49.3px),
+      calc(50% - 60px) calc(100% - 37px),
+      calc(50% - 75px) calc(100% - 24.7px),
+      calc(50% - 90px) calc(100% - 11.4px),
+      calc(50% - 105px) calc(100% - 2.9px),
+      calc(50% - 120px) 100%,
+      0 100%
+    );
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-clipped-bottom {
+    border-radius: 0 0 32px 32px;
+  }
+}
+
+/* 7. CURTAIN FIXED REVEAL MECHANISM (.next_block_sticky + .showcase-curtain) */
+@media (min-width: 768px) {
+  .next_block_sticky {
+    position: relative;
+    z-index: 2;
+    margin-bottom: -100vh;
+  }
+
+  .next_block_sticky.hero-unsticky-following {
+    margin-bottom: 0;
+  }
+
+  .next_block_sticky + section.showcase-curtain:not(.unsticky) {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    margin-bottom: 100vh;
+  }
+
+  .next_block_sticky + section.showcase-curtain.unsticky {
+    position: relative;
+    top: unset;
+    z-index: 1;
+    margin-bottom: 0;
+  }
+}

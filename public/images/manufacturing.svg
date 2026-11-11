@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="mfgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#18232C"/>
+      <stop offset="100%" stop-color="#080D10"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#mfgGrad)"/>
+  <!-- Industrial Sawtooth Roof -->
+  <polygon points="100,380 100,240 180,180 180,240 260,180 260,240 340,180 340,240 420,180 420,240 500,180 500,240 580,180 580,240 660,180 660,380" fill="#141E26"/>
+  <!-- Crane beam highlight inside -->
+  <line x1="140" y1="280" x2="620" y2="280" stroke="#FF7A00" stroke-width="4"/>
+  <rect x="360" y="275" width="40" height="30" fill="#ffffff"/>
+  <line x1="380" y1="305" x2="380" y2="340" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="380" cy="345" r="5" fill="#FF7A00"/>
+  <text x="140" y="130" fill="#ffffff" font-family="sans-serif" font-weight="700" font-size="20" letter-spacing="2">HEAVY INDUSTRIAL FACILITY</text>
+  <text x="140" y="155" fill="#FF7A00" font-family="sans-serif" font-weight="600" font-size="12" letter-spacing="3">10 TON CRANE BEAM • RAILWAY ACCESS</text>
+</svg>

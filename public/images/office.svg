@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="offGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#16222C"/>
+      <stop offset="100%" stop-color="#080D10"/>
+    </linearGradient>
+    <linearGradient id="glassGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2A3D4D"/>
+      <stop offset="100%" stop-color="#141F28"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#offGrad)"/>
+  <!-- Skyscraper 1 -->
+  <polygon points="200,450 200,100 360,60 360,450" fill="url(#glassGrad)"/>
+  <!-- Windows pattern -->
+  <g fill="rgba(255,255,255,0.08)">
+    <rect x="220" y="120" width="20" height="15"/>
+    <rect x="250" y="120" width="20" height="15"/>
+    <rect x="280" y="120" width="20" height="15"/>
+    <rect x="310" y="120" width="20" height="15"/>
+    <rect x="220" y="150" width="20" height="15" fill="#FF7A00" opacity="0.6"/>
+    <rect x="250" y="150" width="20" height="15"/>
+    <rect x="280" y="150" width="20" height="15"/>
+    <rect x="310" y="150" width="20" height="15"/>
+    <rect x="220" y="180" width="20" height="15"/>
+    <rect x="250" y="180" width="20" height="15"/>
+    <rect x="280" y="180" width="20" height="15"/>
+    <rect x="310" y="180" width="20" height="15"/>
+    <rect x="220" y="210" width="20" height="15"/>
+    <rect x="250" y="210" width="20" height="15"/>
+    <rect x="280" y="210" width="20" height="15" fill="#FF7A00" opacity="0.6"/>
+    <rect x="310" y="210" width="20" height="15"/>
+    <rect x="220" y="240" width="20" height="15"/>
+    <rect x="250" y="240" width="20" height="15"/>
+    <rect x="280" y="240" width="20" height="15"/>
+    <rect x="310" y="240" width="20" height="15"/>
+  </g>
+  <!-- Skyscraper 2 -->
+  <polygon points="380,450 380,140 540,110 540,450" fill="#182530"/>
+  <rect x="560" y="200" width="120" height="250" fill="#121C24"/>
+  <line x1="200" y1="100" x2="360" y2="60" stroke="#FF7A00" stroke-width="3"/>
+  <line x1="380" y1="140" x2="540" y2="110" stroke="#FF7A00" stroke-width="2"/>
+  <text x="100" y="470" fill="#ffffff" font-family="sans-serif" font-weight="700" font-size="20" letter-spacing="3">BUSINESS CENTER PLAZA</text>
+  <text x="500" y="470" fill="#FF7A00" font-family="sans-serif" font-weight="600" font-size="12" letter-spacing="3">CLASS A+ • NN DOWNTOWN</text>
+</svg>

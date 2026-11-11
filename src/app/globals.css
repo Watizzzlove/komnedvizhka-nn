@@ -1,0 +1,185 @@
+@font-face {
+  font-family: 'Kharkiv Tone';
+  src: url('../assets/fonts/KharkivTone.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('../assets/fonts/Geologica-cyrillic-ext.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('../assets/fonts/Geologica-cyrillic.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('../assets/fonts/BricolageGrotesque.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-02FF, U+1E00-20CF, U+2100-21FF, U+2C60-2C7F, U+A720-A7FF, U+FEFF-FFFF;
+}
+
+@font-face {
+  font-family: 'Albert Sans';
+  src: url('../assets/fonts/Onest-cyrillic-ext.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+@font-face {
+  font-family: 'Albert Sans';
+  src: url('../assets/fonts/Onest-cyrillic.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: 'Albert Sans';
+  src: url('../assets/fonts/AlbertSans.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-02FF, U+1E00-20CF, U+2100-21FF, U+2C60-2C7F, U+A720-A7FF, U+FEFF-FFFF;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 8, 13, 16; /* #080D10 Pure Phenomenon Dark Canvas */
+}
+
+html {
+  scroll-behavior: auto;
+  overflow-x: clip;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: #080d10;
+  font-family: 'Albert Sans', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Kharkiv Tone', 'Bricolage Grotesque', Arial, sans-serif;
+  font-synthesis-weight: none;
+}
+
+.font-heading {
+  font-synthesis-weight: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080d10;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff7a00;
+}
+
+/* Exact Phenomenon Badge */
+.ph-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.08);
+  font-family: 'Kharkiv Tone', 'Bricolage Grotesque', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+  border: none;
+}
+
+/* Leaflet dark theme map container */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background: #080d10 !important;
+  font-family: 'Albert Sans', sans-serif !important;
+}
+
+/* Elegant dark invert filter for OSM tiles matching Phenomenon dark theme */
+.leaflet-tile {
+  filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.2) brightness(0.7) !important;
+}
+
+/* Clean Custom price pin */
+.custom-price-pin {
+  background-color: #161f26;
+  color: #ffffff;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-family: 'Kharkiv Tone', 'Bricolage Grotesque', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  border: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.custom-price-pin:hover,
+.custom-price-pin.active {
+  background-color: #ff7a00;
+  color: #ffffff;
+  transform: translateY(-2px);
+  z-index: 9999 !important;
+}
+
+/* Metro station markers */
+.metro-station-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #121a1f;
+  border: 1.5px solid #ef4444;
+  font-family: 'Kharkiv Tone', 'Bricolage Grotesque', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  color: #ef4444;
+}
+
+.metro-station-pin.blue {
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
